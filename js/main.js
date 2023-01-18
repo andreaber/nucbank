@@ -63,7 +63,14 @@ if (verificarUsuario(nombreUsuario, passwordUsuario)) {
 ////////////////////////////////////////////////
 
 
-// Simular dejar en plazo fijo un capital (algoritmo para calcular el interés compuesto)
+// Simular dejar en plazo fijo un capital(algoritmo para calcular el interés compuesto)
+
+
+// Ejemplo:
+// capitalInicial = 20000;
+// tasaInteres = 0.05;
+// tiempo = 8;
+
 
 // Obtener la entrada del usuario para el monto principal
 let capitalInicial = parseFloat(prompt("Si deseas depositar dinero en plazo fijo, ingresa el capital inicial:"));
@@ -81,7 +88,17 @@ let interesCompuesto = capitalInicial * Math.pow(1 + tasaInteres, tiempo);
 alert(`El monto final a interés compuesto es: $ ${interesCompuesto}. Los intereses ganados en esta operación son: $ ${interesCompuesto - capitalInicial}`);
 
 
+
+////////////////////////////////////////////////
+
+
 // Simular un sistema de reembolso de préstamos (usando algoritmo del sistema de amortización francés)
+
+// Ejemplo:
+// capitalInicial = 300000;
+// tasaInteres = 0.09;
+// tiempo = 24;
+
 
 capitalInicial = parseFloat(prompt("Si deseas pedir un préstamo personal, ingresa el monto a solicitar:"));
 tasaInteres = parseFloat(prompt("Ingresa la tasa de interés mensual (en formato decimal):"));
