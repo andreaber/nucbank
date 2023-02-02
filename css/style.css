@@ -1,13 +1,13 @@
 :root {
     --color-primario: #1a759f;
-    --color-secundario: #99d98c;
-    --color-terciario: #ff4d6d;
+    --color-secundario: #3be8b0;
+    --color-terciario: #6a67ce;
     --color-primario-oscuro: #184e77;
     --color-secundario-oscuro: #4bbb7d;
-    --color-terciario-oscuro: #c9184a;
-    --color-primario-opacidad: #5ec5763a;
-    --color-secundario-opacidad: #ffcd0331;
-    --color-terciario-opacidad: #ff58602d;
+    --color-terciario-oscuro: #4844c4;
+    --color-primario-opacidad: #1a759f3a;
+    --color-secundario-opacidad: #3be8b031;
+    --color-terciario-opacidad: #6a67ce2d;
     --gradiente-primario: linear-gradient(to top left, #40acde, #2273b1);
     --gradiente-secundario: linear-gradient(to top left, #99d98c, #4bbb7d);
 }
@@ -52,7 +52,8 @@ img {
     font-weight: 500;
     border: none;
     padding: 1.25rem 4.5rem;
-    border-radius: 10rem;
+    /* border-radius: 10rem; */
+    border-radius: 1rem;
     cursor: pointer;
     transition: all 0.3s;
 }
@@ -118,8 +119,8 @@ img {
 
 .nav__link--btn:link,
 .nav__link--btn:visited {
-    padding: 0.8rem 2.5rem;
-    border-radius: 3rem;
+    padding: 0.8rem 3rem;
+    border-radius: 1rem;
     background-color: var(--color-primario);
     color: #f3f3f3;
 }
@@ -337,8 +338,10 @@ h4 {
 }
 
 .operations__icon .fa-solid {
-    height: 2.75rem;
-    width: 2.75rem;
+    height: 2.1rem;
+    width: 2.2rem;
+    font-size: 2.2rem;
+    color: var(--color-primario);
 }
 
 .operations__content p {

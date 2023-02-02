@@ -1,0 +1,312 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #444;
+  background-color: #f3f3f3;
+  height: 100vh;
+  padding: 2rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.home {
+  font-size: 1.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  outline: none;
+}
+
+.home:hover,
+.home:visited,
+.home:focus {
+  outline: none;
+  color: #444;
+}
+
+.bienvenido {
+  font-size: 1.9rem;
+  font-weight: 500;
+}
+
+.logo {
+  height: 5.25rem;
+}
+
+.login {
+  display: flex;
+}
+
+.login__input {
+  border: none;
+  padding: 0.5rem 2rem;
+  font-size: 1.6rem;
+  font-family: inherit;
+  text-align: center;
+  width: 12rem;
+  border-radius: 1rem;
+  margin-right: 1rem;
+  color: inherit;
+  border: 1px solid #fff;
+  transition: all 0.3s;
+}
+
+.login__input:focus {
+  outline: none;
+  border: 1px solid #ccc;
+}
+
+.login__input::placeholder {
+  color: #bbb;
+}
+
+.login__btn {
+  border: none;
+  background: none;
+  font-size: 2.2rem;
+  color: inherit;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.login__btn:hover,
+.login__btn:focus,
+.btn--sort:hover,
+.btn--sort:focus {
+  outline: none;
+  color: #777;
+}
+
+/* MAIN */
+.app {
+  position: relative;
+  max-width: 100rem;
+  margin: 4rem auto;
+  display: grid;
+  grid-template-columns: 4fr 3fr;
+  grid-template-rows: auto repeat(3, 15rem) auto;
+  gap: 2rem;
+
+  /* NOTE This creates the fade in/out anumation */
+  opacity: 0;
+  transition: all 1s;
+}
+
+.saldo {
+  grid-column: 1 / span 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.saldo__label {
+  font-size: 2.2rem;
+  font-weight: 500;
+  margin-bottom: -0.2rem;
+}
+
+.saldo__fecha {
+  font-size: 1.4rem;
+  color: #888;
+}
+
+.saldo__value {
+  font-size: 4.5rem;
+  font-weight: 400;
+}
+
+/* MOVIMIENTOS */
+.movimientos {
+  grid-row: 2 / span 3;
+  background-color: #fff;
+  border-radius: 1rem;
+  overflow: scroll;
+}
+
+.movimientos__row {
+  padding: 2.25rem 4rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.movimientos__type {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #fff;
+  padding: 0.1rem 1rem;
+  border-radius: 0.5rem;
+  /* border-radius: 3rem; */
+  margin-right: 2rem;
+}
+
+.movimientos__fecha {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #666;
+}
+
+.movimientos__type--deposito {
+  background-image: linear-gradient(to top left, #39b385, #9be15d);
+}
+
+.movimientos__type--retiro {
+  background-image: linear-gradient(to top left, #e52a5a, #ff585f);
+}
+
+.movimientos__value {
+  font-size: 1.7rem;
+  margin-left: auto;
+}
+
+/* RESUMEN */
+.resumen {
+  grid-row: 5 / 6;
+  display: flex;
+  align-items: baseline;
+  padding: 0 0.3rem;
+  margin-top: 1rem;
+}
+
+.resumen__label {
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-right: 0.8rem;
+}
+
+.resumen__value {
+  font-size: 2.2rem;
+  margin-right: 2.5rem;
+}
+
+.resumen__value--in,
+.resumen__value--interes {
+  color: #4bb058;
+}
+
+.resumen__value--out {
+  color: #e83a51;
+}
+
+.btn--sort {
+  margin-left: auto;
+  border: none;
+  background: none;
+  font-size: 1.3rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* OPERACIONES */
+.operacion {
+  border-radius: 1rem;
+  padding: 3rem 4rem;
+  color: #333;
+}
+
+/* .operacion--transfer {
+  background-image: linear-gradient(to top left, #f48924, #ffcb03);
+} */
+
+.operacion--transfer {
+  background-image: linear-gradient(to top left, #24caf4, #93e6f4);
+}
+
+.operacion--prestamo {
+  background-image: linear-gradient(to top left, #39b360, #9be15d);
+}
+
+.operacion--cerrar {
+  background-image: linear-gradient(to top left, #e52a5f, #ff585f);
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 2.5fr 2.5fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 0.4rem 1rem;
+}
+
+/* Exceptions for interst */
+.form.form--prestamo {
+  grid-template-columns: 2.5fr 1fr 2.5fr;
+}
+
+.form__label--prestamo {
+  grid-row: 2;
+}
+
+/* End exceptions */
+
+.form__input {
+  width: 100%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.4);
+  font-family: inherit;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #333;
+  padding: 0.3rem 1rem;
+  border-radius: 0.7rem;
+  transition: all 0.3s;
+}
+
+.form__input:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.form__label {
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.form__btn {
+  border: none;
+  border-radius: 0.7rem;
+  font-size: 1.8rem;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.form__btn:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.cierre-sesion {
+  padding: 0 0.3rem;
+  margin-top: 1.9rem;
+  text-align: right;
+  font-size: 1.25rem;
+}
+
+.timer {
+  font-weight: 600;
+}
